@@ -46,3 +46,19 @@ class PatientDoctorMappingViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save()
+
+
+class GetDoctorsByPatientView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, patient_id):
+        # Ensure patient exists and belongs to the current user
+        try:
+            patient = Patient.objects.get(id=patient_id, created_by=request.user)
+        except Patient.DoesNotExist:
+            return Response({'detail': 'Patient not found or not owned by you.'}, status=404)
+
+        mappings = PatientDoctorMapping.objects.filter(patient=patient)
+        serializer = PatientDoctorMappingSerializer(mappings, many=True)
+        return Response(serializer.data)
+
