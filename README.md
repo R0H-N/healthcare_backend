@@ -2,6 +2,7 @@
 ---
 
 ````markdown
+````
 # 🏥 Healthcare Backend API
 
 A secure and scalable RESTful backend for managing patients, doctors, and their relationships. Built with Django, Django REST Framework (DRF), PostgreSQL, JWT Authentication, and containerized using Docker.
@@ -31,6 +32,7 @@ A secure and scalable RESTful backend for managing patients, doctors, and their 
 | API Testing  | Postman                  |
 
 ---
+
 
 ## 🚀 Local Development Setup
 
