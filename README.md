@@ -39,7 +39,7 @@ A secure and scalable RESTful backend for managing patients, doctors, and their 
 ```bash
 git clone https://github.com/your-username/healthcare-backend.git
 cd healthcare-backend
-````
+
 
 ### 2. Add a `.env` file
 
